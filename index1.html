@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Management System</title>
+
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="top-bar">
+
+        <div class="brand">
+
+            <div class="brand-logo">EMS</div>
+
+            <div>
+                <h1>Employee Management System</h1>
+                <p>Manage your team in one place</p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="page-wrapper">
+
+
+        <!-- Dashboard -->
+        <section class="stats-area">
+
+            <article class="stat-box">
+                <div class="stat-symbol">👥</div>
+
+                <div>
+                    <span>Total Employees</span>
+                    <strong id="totalEmployees">0</strong>
+                </div>
+            </article>
+
+
+            <article class="stat-box">
+                <div class="stat-symbol">💰</div>
+
+                <div>
+                    <span>Total Salary</span>
+                    <strong id="salaryTotal">₹0</strong>
+                </div>
+            </article>
+
+
+            <article class="stat-box">
+                <div class="stat-symbol">📊</div>
+
+                <div>
+                    <span>Average Salary</span>
+                    <strong id="salaryAverage">₹0</strong>
+                </div>
+            </article>
+
+
+            <article class="stat-box">
+                <div class="stat-symbol">🟢</div>
+
+                <div>
+                    <span>Active Employees</span>
+                    <strong id="activeTotal">0</strong>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- Employee Form -->
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div class="heading-icon">👤</div>
+
+                <div>
+                    <h2 id="formHeading">Add New Employee</h2>
+                    <p>Enter employee details below</p>
+                </div>
+
+            </div>
+
+
+            <form id="employeeForm">
+
+                <div class="form-layout">
+
+
+                    <div class="field">
+                        <label for="employeeName">Employee Name</label>
+
+                        <input id="employeeName" type="text" placeholder="Enter full name">
+                    </div>
+
+
+                    <div class="field">
+                        <label for="employeeEmail">Email</label>
+
+                        <input id="employeeEmail" type="email" placeholder="example@gmail.com">
+                    </div>
+
+
+                    <div class="field">
+                        <label for="employeePhone">Phone</label>
+
+                        <input id="employeePhone" type="tel" placeholder="Enter phone number">
+                    </div>
+
+
+                    <div class="field">
+                        <label for="employeeDepartment">Department</label>
+
+                        <select id="employeeDepartment">
+
+                            <option value="">Select Department</option>
+                            <option value="IT">IT</option>
+                            <option value="HR">HR</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Operations">Operations</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="field">
+                        <label for="employeeRole">Job Role</label>
+
+                        <input id="employeeRole" type="text" placeholder="e.g. Software Developer">
+                    </div>
+
+
+                    <div class="field">
+                        <label for="employeeSalary">Salary</label>
+
+                        <input id="employeeSalary" type="number" placeholder="Enter salary">
+                    </div>
+
+
+                    <div class="field">
+                        <label for="employeeDate">Joining Date</label>
+
+                        <input id="employeeDate" type="date">
+                    </div>
+
+
+                    <div class="field">
+                        <label for="employeeStatus">Status</label>
+
+                        <select id="employeeStatus">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button type="submit" class="primary-btn" id="saveButton">
+                        ➕ Add Employee
+                    </button>
+
+                    <button type="button" class="secondary-btn hidden" id="cancelButton">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Search and Filters -->
+        <section class="panel">
+
+            <div class="filter-heading">
+
+                <div>
+                    <h2>🔍 Search & Filter</h2>
+                    <p>Find employees quickly</p>
+                </div>
+
+            </div>
+
+
+            <div class="filter-row">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input id="searchBox" type="text" placeholder="Search name, email or role...">
+
+                </div>
+
+
+                <select id="departmentChoice">
+
+                    <option value="all">All Departments</option>
+                    <option value="IT">IT</option>
+                    <option value="HR">HR</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Operations">Operations</option>
+
+                </select>
+
+
+                <select id="statusChoice">
+
+                    <option value="all">All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+
+                </select>
+
+
+                <select id="sortChoice">
+
+                    <option value="none">Sort By</option>
+                    <option value="az">Name A-Z</option>
+                    <option value="za">Name Z-A</option>
+                    <option value="high">Salary High-Low</option>
+                    <option value="low">Salary Low-High</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-actions">
+
+                <button class="outline-btn" id="resetFilters">
+                    Clear Filters
+                </button>
+
+
+                <button class="danger-btn" id="removeAll">
+                    🗑️ Delete All
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Employee List -->
+        <section class="panel">
+
+            <div class="list-heading">
+
+                <div>
+                    <h2>Employee List</h2>
+                    <p>All registered employees</p>
+                </div>
+
+            </div>
+
+
+            <div id="employeeCards" class="cards-container"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
