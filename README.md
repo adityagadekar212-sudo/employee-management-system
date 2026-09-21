@@ -17,9 +17,9 @@ The system allows users to **add, edit, delete, search, filter, and sort employe
 * Persistent data storage using LocalStorage
 
 ##Technologies:
-HTML5
-CSS3
-JavaScript
-DOM Manipulation
-LocalStorage
+ HTML5
+ CSS3
+ JavaScript
+ DOM Manipulation
+ LocalStorage
 
